@@ -16,8 +16,8 @@ my_assistant = client.beta.assistants.create(
         {
             "type": "function",
             "function": {
-                "name": "Function1",
-                "description": "A description of what Function1 does",
+                "name": "db_read",
+                "description": "Queries and reads from database.",
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -33,8 +33,8 @@ my_assistant = client.beta.assistants.create(
         {
             "type": "function",
             "function": {
-                "name": "Function2",
-                "description": "A description of what Function2 does",
+                "name": "db_write",
+                "description": "Writes a new entry to database.",
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -50,7 +50,8 @@ my_assistant = client.beta.assistants.create(
                     "required": ["test2", "test3"]
                 }
             }
-        }
+        },
+
     ],
     model="gpt-4-turbo",
     temperature=0.7,
